@@ -6,7 +6,7 @@ import threading
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)   
 s.connect(("localhost", 5000))
 s.send(bytes('00010sinitlogin','utf-8'))
-s.listen(1000)
+
 
 def recibir(sock, addr):
     print("Ingresando a la cuenta de usuario")
