@@ -26,7 +26,7 @@ while server.recv(4096):
     else:
         menj = "No fue posible añadir el usuario"
     
-    menj='supfu'+str(menj)
+    menj='agusr'+str(menj)
     temp=llenado(len(menj))  
     server.send(bytes(temp+menj,'utf-8'))
     print("Usuario registrado")

@@ -2,6 +2,7 @@ import socket
 import bcrypt
 import time
 import datetime
+import hashlib
 
 from conect import *
 import threading
@@ -74,12 +75,8 @@ while True:
         region = input("Región de residencia: ")
         email = input("E-mail: ")
         #--------------HASH----------------
-        salt = "$2b$12$hILO/lp2l/mQSLZXpcCO0."
-       
-        saltenc = salt.encode()
-        psw2 = psw.encode()
-        pswAux = bcrypt.hashpw(psw2, saltenc)
-        pswAux2 = pswAux.decode()
+        pswAux=hashlib.md5(psw)
+        pswAux2=pswAux.digest()
         #----------------------------------
         #envio de datos
         datos = nombre + " " + apellido + " " + rut + " " + pswAux2 + " " + contacto + " " + region + " " + email

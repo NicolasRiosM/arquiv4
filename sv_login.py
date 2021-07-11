@@ -3,6 +3,7 @@ from conect import *
 import bcrypt
 import threading
 import sqlite3
+import hashlib
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect(("localhost", 5000))
@@ -22,12 +23,12 @@ while s.recv(4096):
     val = 0
     consulta = "select email, pass from usuario"
     respuesta = consultar(consulta)
-    enchash = password.encode()
+    enchash = hashlib.md5(bytes(password))
     for i in respuesta:
         mail = i[0]
         passw = i[1] 
-        encpass = passw.encode()
-        if mail == email and bcrypt.checkpw(encpass, enchash):
+        
+        if mail == email and passw==enchash:
             val=1
             print("Ha ingresado con éxito a su cuenta")
             break
