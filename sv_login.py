@@ -7,7 +7,7 @@ import hashlib
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect(("localhost", 5000))
-s.send(bytes('00010sinitlogin','utf-8'))
+s.send(bytes('00010sinitlogi7','utf-8'))
 print("hola")
 #def recibir(sock, addr):
 print("Ingresando a la cuenta de usuario")
@@ -20,7 +20,7 @@ while True:
     datos=s.recv(4096)
     print(datos)
     print("hola")
-    if datos.decode('utf-8').find('login')!=-1:
+    if datos.decode('utf-8').find('logi7')!=-1:
         datos = datos[10:]
         target = datos.decode()
         data = target.split()
@@ -40,11 +40,11 @@ while True:
             if mail == email and passw==pass2:
                 val=1
                 print("Ha ingresado con éxito a su cuenta")
-                respuesta2='login'+mail+passw
+                respuesta2='logi7'+mail+passw
                 
                 break
             else:
-                respuesta2 = 'login' + "no_existe_usuario"
+                respuesta2 = 'logi7' + "no_existe_usuario"
                 break
         else:
             pass
