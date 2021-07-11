@@ -40,6 +40,7 @@ while True:
         while (k<len(comp)):
             psw.append(comp[k])
             k=k+1
+        print(psw)
         psw.pop(0)
         psw.pop(0)
         psw.pop()
