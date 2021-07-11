@@ -61,7 +61,7 @@ while True:
         #enviar mensaje
         datos = email + " " + password 
         aux = llenado(len(datos+'login'))
-        mensaje = aux + 'login'+ " " + datos
+        mensaje = aux + 'login' + datos
         print(mensaje)
         s.send(bytes(mensaje,'utf-8'))
         s.sendall(bytes(mensaje.encode()))
