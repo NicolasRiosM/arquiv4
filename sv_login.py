@@ -8,18 +8,18 @@ import hashlib
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect(("localhost", 5000))
 s.send(bytes('00010sinitlogi7','utf-8'))
-print("hola")
+
 #def recibir(sock, addr):
 print("Ingresando a la cuenta de usuario")
 recibido=s.recv(4096)
-print("hola")
+
 
 
 while True:
     print("aqui")
     datos=s.recv(4096)
     print(datos)
-    print("hola")
+    
     if datos.decode('utf-8').find('logi7')!=-1:
         datos = datos[10:]
         target = datos.decode()
@@ -29,9 +29,9 @@ while True:
         val = 0
         consulta = "select email, pass from usuario"
         respuesta = consultar(consulta)
-        enchash = hashlib.md5(password.encode())
+        enchash = hashlib.md5(password.encode())#aqui
         pass2=enchash.hexdigest()
-        print("hola")
+        print("aca abajo contras")
         for i in respuesta:
             mail = i[0]
             passw = i[1] 
