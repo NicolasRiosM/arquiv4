@@ -70,10 +70,10 @@ while True:
         print(recibido[12:].decode())
         recibido = recibido[12:].decode()
         if recibido != "no_existe_usuario":
-                break
-        else:
                 print("No se pudo acceder")
-        
+        else:
+                
+                break
         
 
     if(opcion == '2'):
