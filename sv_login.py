@@ -36,10 +36,10 @@ while True:
         password = data[1]
         val = 0
         print(email)
-        consulta = "select pass from usuario where email='{email[0]}'"
+        consulta = "select pass from usuario"
         respuesta = consultar(consulta)
         print("-----------")
-        print(respuesta)
+        print(respuesta[0])
         enchash = hashlib.md5(password.encode())#aqui
         pass2=enchash.hexdigest()
         print("aca abajo contras")
