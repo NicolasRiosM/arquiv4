@@ -42,6 +42,6 @@ while s.recv(4096):
     temp=llenado(len(respuesta2))  
     print('tmp: ', temp)
     print('tmp + respuesta:',temp+respuesta2)
-    s.send(bytes(temp+respuesta2,'utf-8'))
+    s.sendall(bytes(temp+respuesta2,'utf-8'))
 if (val!=1):
     print("Contraseña incorrecta")
