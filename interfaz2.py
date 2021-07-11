@@ -13,7 +13,6 @@ print('connecting to {} port {}'.format(*server_address))
 s.connect(server_address)
 
 s.sendall(bytes('00005getsv','utf-8'))
-recibido=s.recv(4096)
 def limpiar(var):
     var = str(var)
     var = var.replace("[","")
@@ -24,20 +23,7 @@ def limpiar(var):
     return var
 
         
-def login ():
-        while True:
-                
-                mail = input("Ingrese su e-mail: ")
-                password = input("Ingrese su contraseña: ")
-
-                #datos = nombre + " " + apellido + " " + rut + " " + pswAux2 + " " + contacto + " " + region + " " + emai
-                datos = mail + " " + password
-                temp = llenado(len(datos+'login'))
-                mensaje = temp + 'login' + datos
-                s.send(bytes(mensaje,'utf-8'))
-        
-                recibido = s.recv(4096)
-                print(recibido)       
+     
         
        
 #-------------------------interfaz--------------------------------------#
@@ -60,8 +46,37 @@ while True:
         break
     
     if(opcion == '1'):
-        login()
-        s.close()
+        print("Ha seleccionado la opcion de inicio de sesión\n")
+        #mandar a codigo maca
+        
+        
+        #ingreso de dato
+        
+        email = input("Ingrese su email \n")
+        password = input("Ingrese su contraseña\n")
+
+
+        #enviar mensaje
+        datos = email + " " + password 
+        aux = llenado(len(datos+'login'))
+        mensaje = aux + 'login' + datos
+        
+        s.send(bytes(mensaje,'utf-8'))
+        
+        print("val")
+        
+        
+        recibido=s.recv(4096)
+        
+        
+        print("aka")
+        recibido = recibido[12:].decode()
+        if recibido == "no_existe_usuario":
+                print("No se pudo acceder")
+                continue
+        else:
+                
+                break
         
 
     if(opcion == '2'):
