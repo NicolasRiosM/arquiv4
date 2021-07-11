@@ -24,11 +24,12 @@ while s.recv(4096):
     consulta = "select email, pass from usuario"
     respuesta = consultar(consulta)
     enchash = hashlib.md5(bytes(password))
+    pass2=enchash.hexdigest()
     for i in respuesta:
         mail = i[0]
         passw = i[1] 
         
-        if mail == email and passw==enchash:
+        if mail == email and passw==pass2:
             val=1
             print("Ha ingresado con éxito a su cuenta")
             break
