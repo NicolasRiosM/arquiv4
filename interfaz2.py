@@ -64,7 +64,7 @@ while True:
         mensaje = aux + 'logi7' + datos
         print(mensaje)
         s.send(bytes(mensaje,'utf-8'))
-        s.sendall(bytes(mensaje.encode()))
+        
         print("val")
         
         
