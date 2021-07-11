@@ -33,9 +33,9 @@ def login ():
                 datos = mail + " " + password
                 temp = llenado(len(datos+'login'))
                 mensaje = temp + 'login' + datos
-                socket.send(bytes(mensaje,'utf-8'))
+                s.send(bytes(mensaje,'utf-8'))
         
-                recibido = socket.recv(4096)
+                recibido = s.recv(4096)
                 print(recibido[10:])       
         
        
