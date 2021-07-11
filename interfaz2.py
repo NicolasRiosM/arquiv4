@@ -62,7 +62,7 @@ while True:
         datos = email + " " + password 
         aux = llenado(len(datos+'login'))
         mensaje = aux + 'login' + datos
-        
+        print(aux)
         s.send(bytes(mensaje,'utf-8'))
         
         print("val")
