@@ -39,7 +39,7 @@ while True:
         consulta = "select pass from usuario"
         respuesta = consultar(consulta)
         print("-----------")
-        print(respuesta[0][0])
+        print(respuesta[0][1])
         enchash = hashlib.md5(password.encode())#aqui
         pass2=enchash.hexdigest()
         print("aca abajo contras")
