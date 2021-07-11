@@ -36,8 +36,8 @@ while True:
             mail = i[0]
             passw = i[1] 
             print(passw)
-            print(pass2)
-            if mail == email and passw==pass2:
+            print(password)
+            if mail == email and passw==password:
                 val=1
                 print("Ha ingresado con éxito a su cuenta")
                 respuesta2='logi7'+mail+passw
