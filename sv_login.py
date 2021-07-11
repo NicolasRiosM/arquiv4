@@ -39,6 +39,7 @@ while True:
         print(email)
         consulta = f"select pass from usuario where email='{email}'"
         respuesta = consultar(consulta)
+        
         print("-----------")
         print(respuesta)
         respuesta=limpiar(respuesta)
@@ -54,16 +55,19 @@ while True:
             val=1
             print("Ha ingresado con éxito a su cuenta")
             respuesta2='logi7'+mail+passw
+            print(respuesta2)
+            temp=llenado(len(respuesta2))  
+            s.sendall(bytes(temp+respuesta2,'utf-8'))
             
-            break
         else:
             respuesta2 = 'logi7' + "no_existe_usuario"
-            break
+            print(respuesta2)
+            temp=llenado(len(respuesta2))  
+            s.sendall(bytes(temp+respuesta2,'utf-8'))
     else:
         pass
-print(respuesta2)
-temp=llenado(len(respuesta2))  
-s.sendall(bytes(temp+respuesta2,'utf-8'))
 
-if (val!=1):
-    print("Contraseña incorrecta")
+
+    if (val!=1):
+        print("Contraseña incorrecta")
+    
