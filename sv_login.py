@@ -11,6 +11,7 @@ s.send(bytes('00010sinitlogin','utf-8'))
 
 #def recibir(sock, addr):
 print("Ingresando a la cuenta de usuario")
+print(s.recv(4096))
 if s.recv(4096)!=b'00012sinitOKlogin':
     
     while True:
