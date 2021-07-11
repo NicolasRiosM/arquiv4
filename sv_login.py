@@ -46,9 +46,9 @@ while True:
                 break
         else:
             pass
-print(respuesta2)
-temp=llenado(len(respuesta2))  
-s.sendall(bytes(temp+respuesta2,'utf-8'))
+    print(respuesta2)
+    temp=llenado(len(respuesta2))  
+    s.sendall(bytes(temp+respuesta2,'utf-8'))
 
-if (val!=1):
-    print("Contraseña incorrecta")
+    if (val!=1):
+        print("Contraseña incorrecta")
