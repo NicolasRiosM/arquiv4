@@ -29,6 +29,8 @@ while True:
         val = 0
         consulta = "select email, pass from usuario where email='{email}'"
         respuesta = consultar(consulta)
+        print("-----------")
+        print(respuesta)
         enchash = hashlib.md5(password.encode())#aqui
         pass2=enchash.hexdigest()
         print("aca abajo contras")
