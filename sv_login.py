@@ -25,6 +25,7 @@ while s.recv(4096):
     respuesta = consultar(consulta)
     enchash = hashlib.md5(password.encode())
     pass2=enchash.hexdigest()
+    print("hola")
     for i in respuesta:
         mail = i[0]
         passw = i[1] 
