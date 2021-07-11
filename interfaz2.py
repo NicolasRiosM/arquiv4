@@ -62,6 +62,7 @@ while True:
         
         socket.sendall(bytes(mensaje,'utf-8'))
         val=socket.recv(4096)
+        print(val)
         if val.decode().find('okay'):
 
                 break
