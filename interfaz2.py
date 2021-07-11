@@ -37,7 +37,7 @@ def login ():
                 s.send(bytes(mensaje,'utf-8'))
         
                 recibido = s.recv(4096)
-                print(recibido[10:])       
+                print(recibido)       
         
        
 #-------------------------interfaz--------------------------------------#
