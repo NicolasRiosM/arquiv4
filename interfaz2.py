@@ -50,7 +50,7 @@ while True:
         #mandar a codigo maca
         socket.sendall(bytes('00010getsvlogin','utf-8'))
         #ingreso de dato
-        recibido=socket.recv(4096)
+        
         email = input("Ingrese su email \n")
         password = input("Ingrese su contraseña\n")
 
@@ -65,10 +65,10 @@ while True:
         print("val")
         
         print("aka")
-        val=socket.recv(4096)
-        val=socket.recv(4096)
-        val = val[10:].decode()
-        if val != "no_existe_usuario":
+        recibido=socket.recv(4096)
+        
+        recibido = recibido[10:].decode()
+        if recibido != "no_existe_usuario":
                 break
         else:
                 print("No se pudo acceder")
