@@ -61,9 +61,13 @@ while True:
         mensaje = aux + 'login' + datos
         
         socket.sendall(bytes(mensaje,'utf-8'))
-        
-        break
-        
+        val=socket.recv(4096)
+        if val.decode().find('okay'):
+
+                break
+        else:
+                print("no se puede :C")
+
     if(opcion == '2'):
         socket.sendall(bytes('00010getsvagusr','utf-8'))
         print("Para crear su cuenta de usuario, ingrese sus datos a continuación.")

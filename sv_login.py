@@ -32,6 +32,7 @@ while s.recv(4096):
         if mail == email and passw==pass2:
             val=1
             print("Ha ingresado con éxito a su cuenta")
+            s.sendall('00009loginokay','utf-8')
             break
 if (val!=1):
     print("Contraseña incorrecta")
