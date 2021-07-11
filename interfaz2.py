@@ -64,11 +64,13 @@ while True:
         val=socket.recv(4096)
         print("val")
         print(val)
-        if val.decode().find('si'):
-
+        val = val[12:].decode()
+        if val != "no_existe_usuario":
                 break
         else:
-                print("no se puede :C")
+                print("No se pudo acceder")
+        
+        
 
     if(opcion == '2'):
         socket.sendall(bytes('00010getsvagusr','utf-8'))
