@@ -62,7 +62,7 @@ while True:
         
         socket.sendall(bytes(mensaje,'utf-8'))
         
-
+        break
         
     if(opcion == '2'):
         socket.sendall(bytes('00010getsvagusr','utf-8'))
