@@ -64,7 +64,7 @@ while True:
         val=socket.recv(4096)
         print("val")
         print(val)
-        if val.decode().find('okay'):
+        if val.decode().find('si'):
 
                 break
         else:
