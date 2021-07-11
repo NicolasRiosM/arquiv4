@@ -82,7 +82,7 @@ while True:
         
 
     if(opcion == '2'):
-        s.sendall(bytes('00010getsvagusr','utf-8'))
+        
         print("Para crear su cuenta de usuario, ingrese sus datos a continuación.")
         nombre = input("Nombre: ")
         apellido = input("Apellido: ")
@@ -92,7 +92,7 @@ while True:
         region = input("Región de residencia: ")
         email = input("E-mail: ")
         #--------------HASH----------------
-        pswAux=hashlib.md5(psw)
+        pswAux=hashlib.md5(psw.encode())
         pswAux2=pswAux.digest()
         #----------------------------------
         #envio de datos
