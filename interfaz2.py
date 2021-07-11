@@ -74,9 +74,11 @@ while True:
         region = input("Región de residencia: ")
         email = input("E-mail: ")
         #--------------HASH----------------
-        salt = bcrypt.gensalt()
+        salt = "$2b$12$hILO/lp2l/mQSLZXpcCO0."
+       
+        saltenc = salt.encode()
         psw2 = psw.encode()
-        pswAux = bcrypt.hashpw(psw2, salt)
+        pswAux = bcrypt.hashpw(psw2, saltenc)
         pswAux2 = pswAux.decode()
         #----------------------------------
         #envio de datos
