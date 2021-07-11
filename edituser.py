@@ -10,7 +10,7 @@ PORT = 5000
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.connect(("localhost",PORT))
 server.send(bytes('00010siniteditu','utf8'))
-recibido=s.recv(4096)
+recibido=server.recv(4096)
 #print(recibido)
 
 
