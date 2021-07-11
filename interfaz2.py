@@ -65,9 +65,11 @@ while True:
         
         print("val")
         
-        print("aka")
+        
         recibido=socket.recv(4096)
+        
         print(recibido[12:].decode())
+        print("aka")
         recibido = recibido[12:].decode()
         if recibido == "no_existe_usuario":
                 print("No se pudo acceder")
