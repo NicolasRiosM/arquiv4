@@ -3,6 +3,7 @@ from conect import *
 import bcrypt
 import threading
 import sqlite3
+import os 
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)   
 server_address = ('localhost', 5000)
@@ -13,6 +14,7 @@ s.sendall(bytes('00010sinitlogin','utf-8'))
 
 #def recibir(sock, addr):
 print("Ingresando a la cuenta de usuario")
+os.wait(s.recv(4096))
 while True:
     datos = s.recv(4096)
     if datos.decode('utf-8').find('login'):
@@ -21,7 +23,7 @@ while True:
         data = target.split()          
     consulta = f"select email, pass from usuario"
     respuesta = consultar(consulta)
-#--------------------------------------------------------------#
+
     i=0
     print(respuesta)
     while (i<len(respuesta)):
@@ -45,7 +47,7 @@ while True:
         psw.pop(0)
         psw.pop()
         password=''.join(psw)
-#-------------------------VALIDANDO--------------------------#
+
         enchash = password.encode()
         encpass = data[1].encode()
         val=0
@@ -53,7 +55,7 @@ while True:
             val=1
             print("Ha ingresado con éxito a su cuenta")
             break
-#--------------------------------------------------------------#
+
 if (val!=1):
     print("Contraseña incorrecta")
     
