@@ -28,7 +28,8 @@ while s.recv(4096):
     for i in respuesta:
         mail = i[0]
         passw = i[1] 
-        
+        print(passw)
+        print(pass2)
         if mail == email and passw==pass2:
             val=1
             print("Ha ingresado con éxito a su cuenta")
