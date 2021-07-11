@@ -120,7 +120,7 @@ while True:
             En caso de algun inconveniente contactarse al mail admin@mail.udp.cl\n""")
 
     if opcion=="1":
-        s.sendall(bytes('00010getsvcread','utf-8'))
+        
         email1 = email
         email2 = email1 + " "
         temp2= llenado(len(email2+'cread'))
