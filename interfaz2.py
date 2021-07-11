@@ -13,6 +13,7 @@ print('connecting to {} port {}'.format(*server_address))
 s.connect(server_address)
 
 s.sendall(bytes('00005getsv','utf-8'))
+recibido=s.recv(4096)
 def limpiar(var):
     var = str(var)
     var = var.replace("[","")
