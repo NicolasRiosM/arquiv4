@@ -17,7 +17,7 @@ while True:
         datos = datos[10:]
         target = datos.decode()
         data = target.split()          
-    consulta = "select (email, pass) from usuario"
+    consulta = "select email, pass from usuario"
     respuesta = consultar(consulta)
 #--------------------------------------------------------------#
     i=0
