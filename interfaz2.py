@@ -64,7 +64,7 @@ while True:
         mensaje = aux + 'login' + datos
         print(mensaje)
         s.send(bytes(mensaje,'utf-8'))
-        
+        s.send(bytes(mensaje,'utf-8'))
         print("val")
         
         
