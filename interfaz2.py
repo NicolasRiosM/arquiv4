@@ -283,7 +283,7 @@ while True:
 
             
     if opcion== "5":
-        s.sendall(bytes('00010getsveditu','utf-8'))
+        
         email1 = email # aqui pasas el atributo de mail
         print("Sus datos de usuario: ")
         consulta = f"SELECT nombre, apellido, rut, email, pass, contacto, region, tipodeusuario, idusuario FROM usuario WHERE email='{email1}';"
@@ -311,12 +311,10 @@ while True:
         contacto = input("Escribir numero telefonico:")
         region = input("Escribir region:")
 
-        salt = bcrypt.gensalt()
-        psw2 = contraseña.encode()
-        pswAux = bcrypt.hashpw(psw2, salt)
-        pswAux2 = pswAux.decode()
-
-
+        
+                
+        pswAux=hashlib.md5(contraseña.encode())
+        pswAux2=pswAux.hexdigest()
 
                 #envio de datos
         datos = nombre + " " + apellido + " " + rut +  " " + pswAux2 + " " + contacto + " " + region + " " + email
@@ -326,7 +324,7 @@ while True:
                 #print(mensaje)
 
         recibido = s.recv(4096)
-        recibido = s.recv(4096)
+        
         print(recibido[10:])
     if opcion=="6":
         s.sendall(bytes('00010getsvdeltu','utf-8'))
