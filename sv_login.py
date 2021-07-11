@@ -14,9 +14,9 @@ print("Ingresando a la cuenta de usuario")
 recibido=s.recv(4096)
 print("hola")
 
-
+datos=s.recv(4096)
 while True:
-    datos=s.recv(4096)
+    
     print(datos)
     print("hola")
     if datos.decode('utf-8').find('login')!=-1:
