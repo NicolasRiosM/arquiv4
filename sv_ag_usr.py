@@ -7,14 +7,14 @@ server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server_address = ('localhost', 5000)
 print('connecting to {} port {}'.format(*server_address))
 server.connect(server_address)
-server.send(bytes('00010sinitagusr','utf-8'))
+server.send(bytes('00010sinitregi7','utf-8'))
 recibido=server.recv(4096)
 #def recibir(sock, addr):
 print("Creando un nuevo usuario")
 while True:
     datos = server.recv(4096)
     print("hola")
-    if datos.decode('utf-8').find('agusr')!=-1:
+    if datos.decode('utf-8').find('regi7')!=-1:
         #decodificar el mensaje
         datos = datos[10:]
         target = datos.decode()
@@ -28,7 +28,7 @@ while True:
     else:
         menj = "No fue posible añadir el usuario"
     
-    menj='agusr'+str(menj)
+    menj='regi7'+str(menj)
     temp=llenado(len(menj))  
     server.send(bytes(temp+menj,'utf-8'))
     print("Usuario registrado")

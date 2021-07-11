@@ -97,8 +97,8 @@ while True:
         #----------------------------------
         #envio de datos
         datos = nombre + " " + apellido + " " + rut + " " + pswAux2 + " " + contacto + " " + region + " " + email
-        temp = llenado(len(datos+'agusr'))
-        mensaje = temp + 'agusr' + datos
+        temp = llenado(len(datos+'regi7'))
+        mensaje = temp + 'regi7' + datos
         s.sendall(bytes(mensaje,'utf-8'))
         
         recibido = s.recv(4096)
