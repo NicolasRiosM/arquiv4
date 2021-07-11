@@ -40,28 +40,29 @@ while True:
         respuesta = consultar(consulta)
         print("-----------")
         print(respuesta)
+        respuesta=limpiar(respuesta)
         enchash = hashlib.md5(password.encode())#aqui
         pass2=enchash.hexdigest()
         print("aca abajo contras")
-        for i in respuesta:
-            mail = i[0]
-            passw = i[1] 
-            print(passw)
-            print(password)
-            if mail == email and passw==password:
-                val=1
-                print("Ha ingresado con éxito a su cuenta")
-                respuesta2='logi7'+mail+passw
-                
-                break
-            else:
-                respuesta2 = 'logi7' + "no_existe_usuario"
-                break
+        
+        mail = email
+        passw = respuesta 
+        print(passw)
+        print(pass2)
+        if passw==pass2:
+            val=1
+            print("Ha ingresado con éxito a su cuenta")
+            respuesta2='logi7'+mail+passw
+            
+            break
         else:
-            pass
-    print(respuesta2)
-    temp=llenado(len(respuesta2))  
-    s.sendall(bytes(temp+respuesta2,'utf-8'))
+            respuesta2 = 'logi7' + "no_existe_usuario"
+            break
+    else:
+        pass
+print(respuesta2)
+temp=llenado(len(respuesta2))  
+s.sendall(bytes(temp+respuesta2,'utf-8'))
 
-    if (val!=1):
-        print("Contraseña incorrecta")
+if (val!=1):
+    print("Contraseña incorrecta")
