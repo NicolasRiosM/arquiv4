@@ -38,7 +38,7 @@ while True:
         datos = datos[10:]
         target = datos.decode()
         data = target.split()
-    
+    print(data)
 #selecciona id del usuario 
     consulta0= f"SELECT idusuario FROM usuario where email='{email[0]}';"
     idusuario1 = consultar(consulta0)
