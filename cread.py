@@ -64,7 +64,7 @@ while True:
     
     
 
-    menj='supfu'+str(menj)
+    menj='cread'+str(menj)
     #print(menj)
     temp=llenado(len(menj))  
     #print('tmp: ', temp)
