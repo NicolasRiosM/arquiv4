@@ -1,5 +1,5 @@
 import psycopg2
-
+import sqlite3
 conec = None
 cur = None
 
