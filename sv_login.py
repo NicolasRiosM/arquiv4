@@ -5,8 +5,10 @@ import threading
 import sqlite3
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)   
-s.connect(("localhost", 5000))
-s.send(bytes('00010sinitlogin','utf-8'))
+server_address = ('localhost', 5000)
+print('connecting to {} port {}'.format(*server_address))
+s.connect(server_address)
+s.sendall(bytes('00010sinitlogin','utf-8'))
 
 
 #def recibir(sock, addr):
