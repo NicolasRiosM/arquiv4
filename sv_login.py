@@ -27,7 +27,7 @@ while s.recv(4096):
     i=0
     print(respuesta)
     while (i<len(respuesta)):
-        comp = respuesta [i][0]
+        comp = respuesta [0][i]
         i=i+1
         mail =[]
         psw = []
