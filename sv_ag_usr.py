@@ -13,6 +13,7 @@ recibido=server.recv(4096)
 print("Creando un nuevo usuario")
 while True:
     datos = server.recv(4096)
+    print("hola")
     if datos.decode('utf-8').find('agusr')!=-1:
         #decodificar el mensaje
         datos = datos[10:]
