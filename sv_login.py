@@ -35,13 +35,13 @@ while s.recv(4096):
             val=1
             print("Ha ingresado con éxito a su cuenta")
             respuesta2='login'+mail+passw
+            
             break
         else:
             respuesta2 = 'login' + "no_existe_usuario"
+            break
 print(respuesta2)
 temp=llenado(len(respuesta2))  
-print('tmp: ', temp)
-print('tmp + respuesta:',temp+respuesta2)
 s.sendall(bytes(temp+respuesta2,'utf-8'))
 if (val!=1):
     print("Contraseña incorrecta")
