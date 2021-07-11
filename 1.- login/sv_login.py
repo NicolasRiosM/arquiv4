@@ -2,6 +2,7 @@ import socket
 from conect import *
 import bcrypt
 import threading
+import sqlite3
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)   
 s.connect(("localhost", 5000))
