@@ -13,6 +13,14 @@ s.send(bytes('00010sinitlogi7','utf-8'))
 print("Ingresando a la cuenta de usuario")
 recibido=s.recv(4096)
 
+def limpiar(var):
+    var = str(var)
+    var = var.replace("[","")
+    var = var.replace("(","")
+    var = var.replace("]","")
+    var = var.replace(")","")
+    var = var.replace(",","")
+    return var
 
 
 while True:
@@ -28,7 +36,7 @@ while True:
         password = data[1]
         val = 0
         print(email)
-        consulta = "select email, pass from usuario"
+        consulta = "select pass from usuario where email='{email[0]}'"
         respuesta = consultar(consulta)
         print("-----------")
         print(respuesta)
