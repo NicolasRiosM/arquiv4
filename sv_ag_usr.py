@@ -7,12 +7,13 @@ server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server_address = ('localhost', 5000)
 print('connecting to {} port {}'.format(*server_address))
 server.connect(server_address)
-
+server.send(bytes('00010sinitagusr','utf-8'))
+recibido=server.recv(4096)
 #def recibir(sock, addr):
 print("Creando un nuevo usuario")
-while server.recv(4096):
+while True:
     datos = server.recv(4096)
-    if datos.decode('utf-8').find('agusr'):
+    if datos.decode('utf-8').find('agusr')!=-1:
         #decodificar el mensaje
         datos = datos[10:]
         target = datos.decode()
@@ -20,7 +21,7 @@ while server.recv(4096):
         
     consulta = f"INSERT INTO usuario (nombre, apellido, rut, pass, contacto, region, email) VALUES ('{data[0]}','{data[1]}','{data[2]}','{data[3]}','{data[4]}','{data[5]}','{data[6]}');"
     respuesta = modificar(consulta)
-    
+    print(respuesta)
     if respuesta == None:
         menj = "ok"
     else:
