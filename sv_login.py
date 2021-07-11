@@ -3,7 +3,7 @@ from conect import *
 import bcrypt
 import threading
 import sqlite3
-import os 
+
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)   
 server_address = ('localhost', 5000)
@@ -14,8 +14,8 @@ s.sendall(bytes('00010sinitlogin','utf-8'))
 
 #def recibir(sock, addr):
 print("Ingresando a la cuenta de usuario")
-os.wait()
-while True:
+
+while s.recv(4096):
     datos = s.recv(4096)
     if datos.decode('utf-8').find('login'):
         datos = datos[10:]
