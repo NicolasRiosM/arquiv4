@@ -49,7 +49,7 @@ while True:
         print("Ha seleccionado la opcion de inicio de sesión\n")
         #mandar a codigo maca
         socket.sendall(bytes('00010getsvlogin','utf-8'))
-        socket.close()
+        
         #ingreso de dato
         
         email = input("Ingrese su email \n")
@@ -67,7 +67,7 @@ while True:
         
         print("aka")
         recibido=socket.recv(4096)
-        print(recibido[12:])
+        print(recibido[:12])
         recibido = recibido[12:].decode()
         if recibido != "no_existe_usuario":
                 break
