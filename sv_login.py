@@ -23,7 +23,7 @@ while s.recv(4096):
         data = target.split()          
     consulta = f"select email, pass from usuario"
     respuesta = consultar(consulta)
-
+    print(data)
     i=0
     print(respuesta)
     while (i<len(respuesta)):
