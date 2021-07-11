@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import serveret
+import socket
 import threading
 
 from conect import *
@@ -8,7 +8,7 @@ from conect import *
 
 #query de la consulta de un paciente mediante rut 
 PORT = 5000
-server = serveret.serveret(serveret.AF_INET, serveret.server_STREAM)
+server = socket.socket(socket.AF_INET, socket.server_STREAM)
 server.connect(("localhost",PORT))
 server.send(bytes('00010sinitcread','utf-8'))
 recibido=server.recv(4096)
