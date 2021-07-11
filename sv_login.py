@@ -8,16 +8,17 @@ import hashlib
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect(("localhost", 5000))
 s.send(bytes('00010sinitlogin','utf-8'))
-
+print("hola")
 #def recibir(sock, addr):
 print("Ingresando a la cuenta de usuario")
 recibido=s.recv(4096)
+print("hola")
 
 
-    
 while True:
     datos=s.recv(4096)
     print(datos)
+    print("hola")
     if datos.decode('utf-8').find('login')!=-1:
         datos = datos[10:]
         target = datos.decode()
