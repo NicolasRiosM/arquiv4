@@ -13,6 +13,7 @@ s.send(bytes('00010sinitlogin','utf-8'))
 print("Ingresando a la cuenta de usuario")
 while s.recv(4096):
     datos = s.recv(4096)
+    print(datos)
     if datos.decode('utf-8').find('login'):
         datos = datos[10:]
         target = datos.decode()
