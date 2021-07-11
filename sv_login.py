@@ -27,7 +27,7 @@ while True:
         email = data[0]
         password = data[1]
         val = 0
-        consulta = "select email, pass from usuario"
+        consulta = "select email, pass from usuario where email='{email}'"
         respuesta = consultar(consulta)
         enchash = hashlib.md5(password.encode())#aqui
         pass2=enchash.hexdigest()
