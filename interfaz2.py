@@ -93,7 +93,7 @@ while True:
         email = input("E-mail: ")
         #--------------HASH----------------
         pswAux=hashlib.md5(psw.encode())
-        pswAux2=pswAux.digest()
+        pswAux2=pswAux.hexdigest()
         #----------------------------------
         #envio de datos
         datos = nombre + " " + apellido + " " + rut + " " + pswAux2 + " " + contacto + " " + region + " " + email
