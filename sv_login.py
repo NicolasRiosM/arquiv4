@@ -21,6 +21,7 @@ while True:
     respuesta = consultar(consulta)
 #--------------------------------------------------------------#
     i=0
+    print(respuesta)
     while (i<len(respuesta)):
         comp = respuesta [i][0]
         i=i+1
