@@ -48,7 +48,7 @@ while True:
     if(opcion == '1'):
         print("Ha seleccionado la opcion de inicio de sesión\n")
         #mandar a codigo maca
-        socket.sendall(bytes('00010getsvlogin','utf-8'))
+        
         
         #ingreso de dato
         
