@@ -23,7 +23,7 @@ while s.recv(4096):
     val = 0
     consulta = "select email, pass from usuario"
     respuesta = consultar(consulta)
-    enchash = hashlib.md5(bytes(password))
+    enchash = hashlib.md5(password.encode())
     pass2=enchash.hexdigest()
     for i in respuesta:
         mail = i[0]
