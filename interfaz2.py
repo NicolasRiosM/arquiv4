@@ -61,7 +61,7 @@ while True:
         aux = llenado(len(datos+'login'))
         mensaje = aux + 'login' + datos
         
-        socket.sendall(bytes(mensaje,'utf-8'))
+        socket.send(bytes(mensaje,'utf-8'))
         
         print("val")
         
