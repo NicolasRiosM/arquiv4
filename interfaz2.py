@@ -65,8 +65,8 @@ while True:
         print("val")
         
         print("aka")
-        '''val=socket.recv(4096)
-        val = val[10:].decode()
+        val=socket.recv(4096)
+        '''val = val[10:].decode()
         if val != "no_existe_usuario":
                 break
         else:
