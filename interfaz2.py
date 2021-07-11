@@ -67,7 +67,7 @@ while True:
         
         print("aka")
         recibido=socket.recv(4096)
-        print(recibido[15:])
+        print(recibido[5:])
         recibido = recibido[12:].decode()
         if recibido != "no_existe_usuario":
                 break
