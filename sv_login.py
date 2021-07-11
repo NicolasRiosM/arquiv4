@@ -27,6 +27,7 @@ while True:
         email = data[0]
         password = data[1]
         val = 0
+        print(email)
         consulta = "select email, pass from usuario where email='{email}'"
         respuesta = consultar(consulta)
         print("-----------")
