@@ -16,9 +16,9 @@ recibido=s.recv(4096)
 
     
 while True:
-    datos = s.recv(4096)
+    datos=s.recv(4096)
     print(datos)
-    if datos.decode('utf-8').find('login'):
+    if datos.decode('utf-8').find('login')!=-1:
         datos = datos[10:]
         target = datos.decode()
         data = target.split()
